@@ -1,3 +1,13 @@
+export interface ProductImage {
+  Link: {
+    Href: string
+    Method: string
+    Rel: string
+    Title: number
+  }
+  MimeType: string
+}
+
 export interface Product {
   Price: {
     Value: number
@@ -29,15 +39,7 @@ export interface Product {
     Rel: string
     Title: number
   }
-  ProductImage: {
-    Link: {
-      Href: string
-      Method: string
-      Rel: string
-      Title: number
-    }
-    MimeType: string
-  }
+  ProductImage: ProductImage
   Reviews: {
     MinReviewData: number
     MaxReviewData: number
@@ -69,4 +71,94 @@ export interface AllCardsData {
   Start: number
   Products: Array<Product>
   Facets: Array<Facet>
+}
+
+interface AvailableSize {
+  AvailableSubstrates: null
+  Category: [any]
+  Currency: string
+  Description: string
+  DisplayOrder: number
+  Id: number
+  Kind: [any]
+  MinimumBundle: number
+  Name: string
+  PostageSize: [any]
+  Price: number
+  Weights: [any]
+  DisplayName: string
+  DefaultNoOfPages: number
+  CanPrepay: boolean
+}
+
+export interface CardDetails {
+  Name: string
+  SizeName: string
+  AvailableSizes: [AvailableSize]
+  Description: string
+  DesignFeatureTags: [string]
+  ImageUrls: [
+    {
+      ImageNo: number
+      ImageUrl: string
+    },
+  ]
+  IsCustomisable: true
+  Metadata: {}
+  MoonpigProductNo: string
+  Pages: [{ PageNo: number; Template: [Object] }]
+  ProductCategoryGroup: {
+    Name: string
+    PageUrl: string
+    SeoPath: string
+  }
+  ProductId: string
+  ProductUrl: string
+  RangeId: number
+  Rank: number
+  SeoPath: string
+  Size: {
+    AvailableSubstrates: []
+    Category: {
+      Id: number
+      Name: string
+    }
+    Currency: string
+    Description: string
+    DisplayOrder: number
+    Id: number
+    Kind: {
+      Category: [any]
+      Id: number
+      Name: string
+    }
+    MinimumBundle: number
+    Name: string
+    PostageSize: {
+      Id: number
+      Name: string
+    }
+    Price: number
+    Weights: {
+      EnvelopeWeight: number
+      ItemWeight: number
+    }
+    DisplayName: string
+    DefaultNoOfPages: number
+    CanPrepay: boolean
+  }
+  SoldOut: boolean
+  SupplierNo: string
+  ThumbnailUrl: string
+  Title: string
+  AdditionalInfo: string
+  IsMultipack: boolean
+  UndeliverableDates: []
+  InStock: boolean
+  OccasionId: number
+  PageCountOverride: null
+  ProductCategoryId: number
+  PublishedOnSite: boolean
+  StyleId: number
+  SupplierId: number
 }

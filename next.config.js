@@ -9,6 +9,16 @@ const nextConfig = {
       },
     ]
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'moonpig.github.io',
+        port: '',
+        pathname: '/tech-test-frontend/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
